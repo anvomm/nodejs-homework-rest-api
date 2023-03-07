@@ -9,11 +9,13 @@ const {
   addContactController,
   updateContactController,
   updateStatusContactController,
-} = require("../../controllers");
+} = require("../../controllers/contacts");
+
+const {auth} =require('../../middlewares');
 
 const {controllerWrapper} = require('../../helpers');
 
-router.get("/", controllerWrapper(listContactsController));
+router.get("/", auth, controllerWrapper(listContactsController));
 
 router.get("/:contactId", controllerWrapper(getContactByIdController));
 
