@@ -12,6 +12,7 @@ const addNewUser = async (body) => {
   const { email, password } = body;
   const newUser = new User({ email });
   newUser.setPassword(password);
+  newUser.generateAvatar(email);
   await newUser.save();
 };
 
