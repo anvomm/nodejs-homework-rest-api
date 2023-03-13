@@ -3,6 +3,7 @@ const loginController = require("./loginController");
 const logoutController = require("./logoutController");
 const currentUserControler = require("./currentUserControler");
 const subscriptionChangeController = require('./subscriptionChangeController');
+const changeAvatarController = require('./changeAvatarController');
 
 module.exports = {
   registrationController,
@@ -10,4 +11,5 @@ module.exports = {
   logoutController,
   currentUserControler,
   subscriptionChangeController,
+  changeAvatarController,
 };
