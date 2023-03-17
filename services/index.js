@@ -14,6 +14,7 @@ const {
   addNewUser,
   updateUser,
   removeToken,
+  findUserToVerify,
 } = require('./usersService');
 
 
@@ -30,4 +31,5 @@ const {
     addNewUser,
     updateUser,
     removeToken,
+    findUserToVerify,
   };

@@ -23,11 +23,15 @@ const loginController = async (req, res) => {
     return sendErrorResponse(401, "Email or password is wrong");
   }
 
-  const { id, email, password, subscription } = registeredUser;
+  const { id, email, password, subscription, verify } = registeredUser;
   const rightUser = await bCrypt.compareSync(req.body.password, password);
 
   if (!rightUser) {
     return sendErrorResponse(401, "Email or password is wrong");
+  }
+
+  if(!verify) {
+    return sendErrorResponse(403, "Email address is unconfirmed");
   }
 
   const payload = {
