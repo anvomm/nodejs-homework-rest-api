@@ -1,5 +1,4 @@
-const { findUserInDb } = require("../../services");
-const { createEmail, sendEmail } = require("../../helpers");
+const { findUserInDb, createEmail, sendEmail } = require("../../services");
 const { userVerificationValidation } = require("../../middlewares");
 
 const repeatVerificationController = async (req, res) => {

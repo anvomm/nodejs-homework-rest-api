@@ -1,5 +1,4 @@
-const { findUserInDb, addNewUser } = require("../../services");
-const { sendEmail, createEmail } = require("../../helpers");
+const { findUserInDb, addNewUser, sendEmail, createEmail } = require("../../services");
 const { userValidation } = require("../../middlewares");
 const { v4: uuidv4 } = require("uuid");
 
