@@ -6,7 +6,9 @@ const {
   updateContact,
   updateStatusContact,
   findDuplicateContact,
-} = require('./contactsService');
+} = require("./contactsService");
+
+const { createEmail, sendEmail } = require("./email");
 
 const {
   findUserInDb,
@@ -14,20 +16,23 @@ const {
   addNewUser,
   updateUser,
   removeToken,
-} = require('./usersService');
+  findUserToVerify,
+} = require("./usersService");
 
-
-  module.exports = {
-    listContacts,
-    getContactById,
-    findDuplicateContact,
-    removeContact,
-    addContact,
-    updateContact,
-    updateStatusContact,
-    findUserInDb,
-    findUserById,
-    addNewUser,
-    updateUser,
-    removeToken,
-  };
+module.exports = {
+  listContacts,
+  getContactById,
+  findDuplicateContact,
+  removeContact,
+  addContact,
+  updateContact,
+  updateStatusContact,
+  findUserInDb,
+  findUserById,
+  addNewUser,
+  updateUser,
+  removeToken,
+  findUserToVerify,
+  createEmail,
+  sendEmail,
+};

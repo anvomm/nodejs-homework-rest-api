@@ -11,6 +11,8 @@ const {
   currentUserControler,
   subscriptionChangeController,
   changeAvatarController,
+  verificationController,
+  repeatVerificationController,
 } = require("../../controllers");
 
 
@@ -20,5 +22,8 @@ router.get("/logout", auth, controllerWrapper(logoutController));
 router.get("/current", auth, controllerWrapper(currentUserControler));
 router.patch("/subscription", auth, controllerWrapper(subscriptionChangeController));
 router.patch("/avatars", auth, upload.single("avatar"), controllerWrapper(changeAvatarController));
+
+router.get("/verify/:verificationToken", controllerWrapper(verificationController));
+router.post("/verify", controllerWrapper(repeatVerificationController));
 
 module.exports = router;
